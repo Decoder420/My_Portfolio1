@@ -1,0 +1,123 @@
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* 🌟 Project Card Hover Effects */
+.project-card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease, border 0.3s ease;
+  border: 2px solid transparent;
+  border-radius: 10px;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0px 8px 20px rgba(128, 0, 128, 0.4); /* subtle purple glow */
+  border-color: #a855f7;
+  animation: border-glow 1.5s infinite alternate;
+}
+
+.project-card img {
+  transition: transform 0.3s ease;
+}
+
+.project-card:hover img {
+  transform: scale(1.05);
+}
+
+/* 🌈 Glowing Border Animation */
+@keyframes border-glow {
+  0% {
+    box-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 15px #a855f7;
+  }
+  100% {
+    box-shadow: 0 0 15px #a855f7, 0 0 25px #a855f7, 0 0 35px #a855f7;
+  }
+}
+/* 🌟 Social Icons Glow */
+.home-about-social-links .social-icons a {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: white;
+  transition: transform 0.3s ease, box-shadow 0.3s ease, color 0.3s ease;
+  border-radius: 50%;
+}
+
+.home-about-social-links .social-icons a:hover {
+  transform: translateY(-5px) scale(1.15);
+  color: #a855f7; /* Purple text color */
+  box-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7;
+  animation: border-glow 1.5s infinite alternate;
+}
+/* 🌟 Glowing Name and Headings */
+.purple {
+  color: #a855f7;
+  text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7;
+  animation: glowPulse 2s infinite alternate;
+}
+
+@keyframes glowPulse {
+  from {
+    text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7;
+  }
+  to {
+    text-shadow: 0 0 10px #a855f7, 0 0 20px #a855f7, 0 0 30px #a855f7;
+  }
+}
+
+/* Headings Glow */
+h1.project-heading, .home-about-description h1, .project-heading strong {
+  color: white;
+  text-shadow: 0 0 5px #a855f7, 0 0 10px #a855f7, 0 0 20px #a855f7;
+}
+/* 🌈 Animated Gradient Text for Purple Elements */
+.purple {
+  background: linear-gradient(270deg, #a855f7, #7c3aed, #d946ef);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 6s ease infinite, glowPulse 2s infinite alternate;
+}
+
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
