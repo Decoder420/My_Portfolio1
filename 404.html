@@ -1,22 +1,26 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="utf-8">
-    <title>Page Not Found</title>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
     <script type="text/javascript">
-      // Get the path from the current URL
-      var path = window.location.pathname;
+      (function () {
+        var repoName = "My_Portfolio1"; // <-- your repo name
+        var homepage = "https://decoder420.github.io/" + repoName + "/";
 
-      // Check if we are on the homepage path
-      if (path === '/My_Portfolio1/') {
-        // If it's the homepage, no redirect is needed.
-        window.location.replace("https://decoder420.github.io/My_Portfolio1/");
-      } else {
-        // Redirect to the homepage with the original path as a hash
-        window.location.replace("https://decoder420.github.io/My_Portfolio1/#" + path);
-      }
+        // Get the current path (excluding the repo name prefix)
+        var path = window.location.pathname.replace("/" + repoName, "");
+
+        // If already on the homepage, just go there
+        if (path === "/" || path === "") {
+          window.location.replace(homepage);
+        } else {
+          // Redirect to hash version so HashRouter can handle it
+          var newUrl = homepage + "#" + path;
+          window.location.replace(newUrl);
+        }
+      })();
     </script>
   </head>
-  <body>
-  </body>
+  <body></body>
 </html>
